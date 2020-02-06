@@ -3,11 +3,12 @@
 //***************************************************************************
 // The "Magpie" AP Lab is created for the College Board APCS
 // curriculum by Laurie White.
-// Leon Schram has altered some of the "Magpie" files to focus on 
+// Leon Schram has altered some of the "Magpie" files to focus on
 // specific CS topics as the "Magpie" Lab is integrated into the curriculum.
 
- 
+
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Lab12avst
 {
@@ -37,6 +38,7 @@ class MagpieLab12a
 
 	public String getResponse(String statement)
 	{
+
 		String response = "";
 		if (statement.indexOf("no") >= 0)
 		{
@@ -58,12 +60,15 @@ class MagpieLab12a
 
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+    String[] responseList = {"Interesting. tell me more.", "Hmmm.", "Do you really think so?", "You don't say.", "I beg to differ.", "Literally shut up.", "Yay!", "Makes sense.", "How's the weather?", "Yea... I don't care."};
+		final int NUMBER_OF_RESPONSES = responseList.length;
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
 
-		if (whichResponse == 0)
+    response = responseList[whichResponse];
+    return response;
+		/*if (whichResponse == 0)
 		{
 			response = "Interesting, tell me more.";
 		}
@@ -78,7 +83,7 @@ class MagpieLab12a
 		else if (whichResponse == 3)
 		{
 			response = "You don't say.";
-		}
-		return response;
-	}
+		}*/
+
+	}//
 }
