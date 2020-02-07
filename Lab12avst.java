@@ -38,7 +38,16 @@ class MagpieLab12a
 
 	public String getResponse(String statement)
 	{
-
+    ArrayList<String> familyResponses = new ArrayList<String>();
+		familyResponses.add("Don't talk.");
+		familyResponses.add("Yea my brother is like that too.");
+		familyResponses.add("My father loves golf.");
+		familyResponses.add("No, my sister does that.");
+		familyResponses.add("Tell me less about your family.");
+		familyResponses.add("Family this, family that... Shut up.");
+		familyResponses.add("That's actually really cool, me too!");
+		familyResponses.add("Exactly! Yea.");
+		familyResponses.add("What about your mother?");
 		String response = "";
 		if (statement.indexOf("no") >= 0)
 		{
@@ -47,9 +56,13 @@ class MagpieLab12a
 		else if (statement.indexOf("mother") >= 0
 				|| statement.indexOf("father") >= 0
 				|| statement.indexOf("sister") >= 0
-				|| statement.indexOf("brother") >= 0)
+				|| statement.indexOf("brother") >= 0
+				|| statement.indexOf("family") >= 0
+				|| statement.indexOf("parent") >= 0)
 		{
-			response = "Tell me more about your family.";
+			double random = Math.random();
+			int whichResponse = (int)(random * familyResponses.size());
+			response = familyResponses.get(whichResponse);
 		}
 		else
 		{
